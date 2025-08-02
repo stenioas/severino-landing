@@ -1,21 +1,26 @@
 import { ChevronRightIcon } from '../../icons';
 import {
+  Link,
   Navbar,
   NavbarBrand,
   NavbarContent,
+  NavbarItem,
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@heroui/react';
-import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import './Header.css';
-// import { getAssetUrl } from '../../utils/getAssetUrl';
+import { getAssetUrl } from '../../utils/getAssetUrl';
 
 const Header: React.FC = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [selectedMenuItem, setSelectedMenuItem] =
+    useState<string>(currentPath);
   const navigate = useNavigate();
 
   const menuItems = [
@@ -27,73 +32,66 @@ const Header: React.FC = () => {
 
   const handleNavigate = (path: string) => {
     setIsMenuOpen(false);
+    setSelectedMenuItem(path);
     navigate(path);
   };
 
   return (
     <Navbar
       isBordered
+      isBlurred={false}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      isBlurred={false}
       role="banner"
       maxWidth="xl"
       shouldHideOnScroll
-      style={{
-        transition: 'all 0.3s ease-in-out',
-      }}
+      className="header--navbar"
     >
       {!isMenuOpen && (
         <NavbarContent>
           <NavbarBrand>
-            <div
-              ref={containerRef}
-              style={{
-                width: '100%',
-              }}
-            >
+            <Link href={getAssetUrl('/')} className="header--logo-link">
               <img
-                src={'logo.svg'}
-                alt="Severino logo"
-                className="h-5 w-auto"
+                src={getAssetUrl('logo.svg')}
+                alt="Severino App logo"
+                className="header--logo"
               />
-            </div>
+            </Link>
           </NavbarBrand>
         </NavbarContent>
       )}
-      <NavbarContent className="sm:hidden" justify="end">
+      <NavbarContent className="header--menu-large" justify="end">
+        {menuItems.map((item, index) => (
+          <NavbarItem key={`${item.label}-${index}`}>
+            <Link
+              type="button"
+              onClick={() => handleNavigate(item.path)}
+              className={`header--menu-large-item-link ${item.path === selectedMenuItem ? 'header--menu-large-item-link-selected' : ''}`}
+            >
+              {item.label}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+      <NavbarContent className="header--menu-icon" justify="end">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         />
       </NavbarContent>
-
-      <NavbarMenu style={{ paddingLeft: 0, paddingRight: 0, gap: 0 }}>
+      <NavbarMenu className="header--menu">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item.label}-${index}`}>
-            <button
+            <Link
               type="button"
               onClick={() => handleNavigate(item.path)}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
-                fontSize: '1.25rem',
-                letterSpacing: '-0.0625rem',
-                color: '#1C1C1C',
-                border: 'none',
-                background: 'none',
-                borderBottom: '0.5px solid #D4D4D4',
-                padding: '1rem',
-                cursor: 'pointer',
-                textAlign: 'left',
-              }}
+              className="header--menu-item-link"
             >
               {item.label}
               <ChevronRightIcon
                 size={16}
                 className="header--menu-item-chevron"
               />
-            </button>
+            </Link>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
