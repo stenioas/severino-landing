@@ -1,0 +1,49 @@
+.contactpage--section {
+  width: 100%;
+  max-width: 1070px;
+  margin: 3rem auto 0;
+  padding: 0 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.contactpage--title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.0625rem;
+  color: #1c1c1c;
+}
+
+.contactpage--description-and-form-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactpage--description {
+  line-height: 1.5rem;
+  letter-spacing: -0.03125rem;
+  color: #096c76;
+}
+
+/* Breakpoint 960px */
+@media (min-width: 960px) {
+  .contactpage--section {
+    padding: 0 4.5rem;
+  }
+
+  .contactpage--title {
+    font-size: 2.5rem;
+    line-height: 100%;
+    margin-top: 7.5rem;
+  }
+
+  .contactpage--description-and-form-wrapper {
+    margin-top: 4.5rem;
+  }
+
+  .contactpage--description {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.0625rem;
+  }
+}
