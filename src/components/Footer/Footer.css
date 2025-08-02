@@ -1,0 +1,104 @@
+.footer {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  margin: 4.5rem auto 0px;
+  padding: 0 1rem 2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.logo-and-email {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.logo {
+  height: 1rem;
+  width: auto;
+}
+
+.email-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.email-icon {
+  height: 1.375rem;
+}
+
+.email-link {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #6b6b6b;
+}
+
+.social-link {
+  color: #096c76;
+}
+
+.social-link:hover {
+  color: #075a61;
+}
+
+.divider {
+  border-color: #d4d4d4;
+  border-top-width: 0.5px;
+  margin-top: 2.5rem;
+}
+
+.socials-and-copy {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  gap: 2.5rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #7b7b7b;
+}
+
+/* Breakpoint 960px */
+@media (min-width: 960px) {
+  .footer {
+    padding: 0 4.5rem 3rem;
+    margin: 8rem auto 0px;
+  }
+
+  .logo {
+    height: 1.5rem;
+  }
+
+  .email-link {
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0px;
+  }
+
+  .socials-and-copy {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4.375rem;
+  }
+}

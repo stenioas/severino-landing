@@ -99,12 +99,7 @@ const IndicatorCard = ({
 
 const IndicatorSection: React.FC = () => (
   <section
-    style={{
-      width: '100%',
-      maxWidth: '1280px',
-      margin: '5rem auto 0',
-      fontFamily: '"Open Sans", sans-serif',
-    }}
+    className="indicator-section"
     aria-label="Encontre o serviço ideal para você"
   >
     <h2

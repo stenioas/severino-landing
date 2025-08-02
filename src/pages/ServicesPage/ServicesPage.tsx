@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppStoreButtons } from '../../components';
-import { ForWhoSection } from './components';
+import { ForWhoSection, OurServicesSection } from './components';
 import { getAssetUrl } from '../../utils/getAssetUrl';
 
 const forWhoData = [
@@ -109,9 +109,10 @@ const ServicesPage: React.FC = () => (
           </div>
         </div>
       </section>
-      {forWhoData.map((item) => (
-        <ForWhoSection {...item} />
+      {forWhoData.map((item, index) => (
+        <ForWhoSection key={`for-who-${index}`} {...item} />
       ))}
+      <OurServicesSection />
     </main>
   </>
 );

@@ -10,31 +10,31 @@ const features = [
     title: 'Chegamos pra descomplicar',
     content:
       'Com o Severino App, você encontra profissionais de confiança, escolhe o serviço que precisa e resolve tudo de forma prática, sem complicação.',
-    img: '/img/FeatureAccordion/1_came_to_simplify.png',
+    img: '/img/1_came_to_simplify.png',
   },
   {
     title: 'Escolha um serviço ou profissional',
     content:
       'Chuveiro queimou? Luz piscando? Tomada sem funcionar? Problemas elétricos não podem esperar e nem sempre dá pra confiar em qualquer um.',
-    img: '/img/FeatureAccordion/2_choose_service.png',
+    img: '/img/2_our_services.png',
   },
   {
     title: 'Os melhores serviços para atuar',
     content:
       'Selecionamos os serviços mais procurados e bem avaliados da plataforma para você atuar com frequência e garantir bons ganhos.',
-    img: '/img/FeatureAccordion/3_best_services.png',
+    img: '/img/3_choose_service.png',
   },
   {
     title: 'Saiba os detalhes antes de contratar',
     content:
       'Desde o início, você vê quem está por trás do serviço: perfil, avaliações e experiência. Contrate com confiança e segurança.',
-    img: '/img/FeatureAccordion/4_details_before_hiring.png',
+    img: '/img/4_details_before_hiring.png',
   },
   {
     title: 'Valores dos serviços em tempo real',
     content:
       'Você acompanha os valores atualizados dos serviços em tempo real, direto na plataforma. Clareza e controle para tomar a melhor decisão.',
-    img: '/img/FeatureAccordion/5_realtime_service_values.png',
+    img: '/img/5_last_services_total.png',
   },
 ];
 
@@ -150,7 +150,8 @@ const FeatureAccordion: React.FC = () => {
               <img
                 src={getAssetUrl(feature.img)}
                 style={{
-                  marginTop: '1.5rem',
+                  width: '328px',
+                  marginTop: '1.25rem',
                   marginLeft: 'auto',
                   marginRight: 'auto',
                 }}

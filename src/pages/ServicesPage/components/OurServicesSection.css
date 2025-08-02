@@ -1,0 +1,74 @@
+.our-services-section {
+  width: 100%;
+  max-width: 1280px;
+  margin: 4.5rem auto 0;
+  padding: 0 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.our-services-section__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.0625rem;
+  color: #1c1c1c;
+}
+
+.our-services-section__description {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.0625rem;
+  color: #7b7b7b;
+  margin-top: 2rem;
+}
+
+.our-services-section__subtitle {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0;
+}
+
+.our-services-section__cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 43.25rem;
+}
+
+.our-services-section__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  gap: 6px;
+  width: 5rem;
+  padding: 1rem 1rem;
+  background: #fff;
+  border-radius: 1rem;
+  border: 1px solid #e8e6e7;
+}
+
+.our-services-section__card-active {
+  background: #096c76;
+}
+
+.our-services-section__card-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.our-services-section__card-label {
+  font-size: 0.625rem;
+  color: #7b7b7b;
+  text-align: center;
+  margin: 0;
+}
+
+.our-services-section__card-label-active {
+  color: #ffffff;
+}

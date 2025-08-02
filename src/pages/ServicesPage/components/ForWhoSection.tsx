@@ -1,4 +1,4 @@
-import { Card, CardFooter, Image } from '@heroui/react';
+import { Card, CardFooter } from '@heroui/react';
 
 interface ForWhoSectionProps {
   title: string;
@@ -23,6 +23,7 @@ const ForWhoSection = ({
       style={{
         width: '100%',
         maxWidth: '1280px',
+        minWidth: '360px',
         margin: '4.5rem auto 0',
         padding: '0 1rem',
         fontFamily: '"Open Sans", sans-serif',
@@ -70,10 +71,13 @@ const ForWhoSection = ({
             alignItems: 'center',
           }}
         >
-          <Image
+          <img
             alt="Woman listing to music"
-            className="object-cover"
             src={cardImgSrc}
+            style={{
+              width: '100%',
+              objectFit: 'contain',
+            }}
           />
           <CardFooter
             style={{

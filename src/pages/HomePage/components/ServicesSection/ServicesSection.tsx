@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, CardFooter } from '@heroui/react';
 import Lottie from 'lottie-react';
 
-import animation from '../../../../../public/animations/choose_service_animation.json'; // ajuste o caminho conforme necessário
+import animation from '../../../../animations/choose_service_animation.json';
 import './ServiceSection.css';
 import { getAssetUrl } from '../../../../utils/getAssetUrl';
 

@@ -5,7 +5,6 @@ import {
   ServicesSection,
   FeatureAccordion,
 } from './components';
-import { NewsletterForm } from '../../components';
 
 const HomePage: React.FC = () => (
   <>
@@ -14,7 +13,6 @@ const HomePage: React.FC = () => (
       <StepsSection />
       <ServicesSection />
       <FeatureAccordion />
-      <NewsletterForm />
     </main>
   </>
 );
