@@ -1,6 +1,6 @@
 import React from 'react';
-import { NewsletterForm, AppStoreButtons } from '../../components';
 import { ValuesSection, IndicatorSection } from './components';
+import { AppStoreButtons } from '../../components';
 
 const AboutUsPage: React.FC = () => (
   <>
@@ -102,7 +102,6 @@ const AboutUsPage: React.FC = () => (
       </section>
       <ValuesSection />
       <IndicatorSection />
-      <NewsletterForm />
     </main>
   </>
 );
