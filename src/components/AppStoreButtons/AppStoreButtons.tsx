@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Button,
   Popover,
@@ -7,24 +7,40 @@ import {
 } from '@heroui/react';
 import { getAssetUrl } from '../../utils/getAssetUrl';
 
+import './AppStoreButtons.css';
+import { XMarkIcon } from '@heroicons/react/16/solid';
+
 const AppStoreButtons = () => {
-  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const handleSoonButtonClick = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    setIsPopoverOpen(true);
-    timeoutRef.current = setTimeout(() => setIsPopoverOpen(false), 5000);
+  const handlePopoverOpen = () => {
+    console.log('open');
+    setIsOpen(true);
   };
 
+  const handlePopoverClose = () => {
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isOpen) {
+      timer = setTimeout(() => setIsOpen((prev) => !prev), 6000);
+    }
+    return () => clearTimeout(timer);
+  }, [isOpen]);
+
   return (
-    <div className="flex gap-3">
+    <div className="app-store-buttons">
       <Button
         radius="sm"
-        style={{ backgroundColor: '#000000', padding: '6px 12px' }}
+        className="play-store-btn"
+        onPress={() => {
+          window.open(
+            'https://play.google.com/store/apps/details?id=com.severino&hl=pt_BR',
+            '_blank',
+          );
+        }}
       >
         <img src={getAssetUrl('play_store.svg')} alt="Play Store" />
       </Button>
@@ -34,33 +50,32 @@ const AppStoreButtons = () => {
         shadow="none"
         className="dark"
         radius="sm"
-        isOpen={isPopoverOpen}
-        onOpenChange={handleSoonButtonClick}
+        isOpen={isOpen}
+        onOpenChange={(open) => setIsOpen(open)}
+        shouldCloseOnBlur={false}
+        triggerScaleOnOpen={false}
       >
         <PopoverTrigger>
           <Button
             radius="sm"
-            style={{ backgroundColor: '#7B7B7B', padding: '6px 12px' }}
+            className="app-store-btn"
+            onPress={() => {
+              handlePopoverOpen();
+            }}
           >
             <img src={getAssetUrl('app_store.svg')} alt="App Store" />
           </Button>
         </PopoverTrigger>
         <PopoverContent>
-          <span
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '0.25rem',
-              fontSize: '0.75rem',
-              lineHeight: '1rem',
-              letterSpacing: 0,
-              color: '#FFFFFF',
-              padding: '0.375rem 0.125rem',
-            }}
-          >
+          <span className="soon-label">
             Em breve
-            {/**<XMarkIcon className="w-4 h-4" /> */}
+            <Button
+              isIconOnly
+              radius="full"
+              className="newsletter--popover-content-close"
+              endContent={<XMarkIcon className="w-4 h-4" color="#FFF" />}
+              onPress={handlePopoverClose}
+            />
           </span>
         </PopoverContent>
       </Popover>
