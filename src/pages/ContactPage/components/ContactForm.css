@@ -1,14 +1,7 @@
-.contact-form-section {
-  width: 100%;
-  max-width: 1440px;
-  margin: 3rem auto 0;
-  padding: 0 1rem;
-  font-family: 'Open Sans', sans-serif;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
+  max-width: 41.5rem;
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -16,7 +9,6 @@
 .contact-form-title {
   font-size: 0.75rem;
   line-height: 1rem;
-  text-align: center;
   color: #1c1c1c;
 }
 
@@ -36,7 +28,6 @@
 .contact--inputWrapper {
   height: 3.625rem;
   width: 100%;
-  max-width: 25rem;
   border: 1px solid #d8d8d8;
   padding-left: 1rem;
   padding-right: 0.5rem;
@@ -44,10 +35,17 @@
   box-shadow: none;
 }
 
+.contact--input {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: 0px;
+  color: #1c1c1c;
+}
+
 .contact--input::placeholder {
   background-color: transparent;
   color: #aaaaaa;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1rem;
   letter-spacing: 0px;
 }
@@ -55,7 +53,6 @@
 .contact--textareaWrapper {
   height: 14.5rem !important;
   width: 100%;
-  max-width: 25rem;
   border: 1px solid #d8d8d8;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -72,7 +69,7 @@
 .contact--textarea::placeholder {
   background-color: transparent;
   color: #aaaaaa;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1rem;
   letter-spacing: 0px;
 }
@@ -107,4 +104,58 @@
   opacity: 1;
   color: #fff;
   box-sizing: content-box;
+}
+
+/* Breakpoint 960px */
+@media (min-width: 960px) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 41.5rem;
+    gap: 2.5rem;
+    margin-top: 6rem;
+  }
+
+  .contact-form-title {
+    font-size: 0.875rem;
+  }
+
+  .contact-form-fields-inputs {
+    flex-direction: row;
+  }
+
+  .contact--inputWrapper {
+    height: 4rem;
+    padding-left: 1.5rem;
+  }
+
+  .contact--input {
+    font-size: 1rem;
+  }
+
+  .contact--input::placeholder {
+    font-size: 1rem;
+  }
+
+  .contact--textareaWrapper {
+    padding-left: 1.5rem;
+  }
+
+  .contact--textarea {
+    font-size: 1rem;
+  }
+
+  .contact--textarea::placeholder {
+    font-size: 1rem;
+  }
+
+  .contact--textarea-count {
+    bottom: -1.75rem;
+  }
+
+  .contact--send-button {
+    height: 3.125rem;
+    top: -1rem;
+    padding: 0 1.75rem;
+  }
 }
