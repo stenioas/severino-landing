@@ -1,4 +1,5 @@
 .step-card {
+  position: relative;
   background-color: #ffffff;
   border: 1px solid #a8a8a8;
   border-radius: 1.25rem;
@@ -15,6 +16,7 @@
 }
 
 .step-card-header {
+  position: relative;
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -77,4 +79,44 @@
   height: 1.25rem;
   color: #575757;
   transition: color 0.5s ease;
+}
+
+/* Breakpoint 960px */
+@media (min-width: 960px) {
+  .step-card {
+    border-radius: 1.5rem;
+    padding: 4.25rem 2.5rem 2.25rem;
+    gap: 1.75rem;
+  }
+
+  .step-card-header-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .step-number {
+    position: absolute;
+    top: -2.5rem;
+    right: -0.5rem;
+    font-size: 1rem;
+  }
+
+  .step-title {
+    font-size: 1.5rem;
+  }
+
+  .step-description {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  .step-icon-container {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .step-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }

@@ -1,0 +1,107 @@
+.ideal-service__card {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1.75rem 0.875rem 1rem 0.875rem;
+  width: 304px;
+  min-height: 226px;
+  margin: 0 auto;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.ideal-service__image {
+  position: absolute;
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.ideal-service__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background: linear-gradient(
+    135deg,
+    #3d3d3d -23.51%,
+    rgba(10, 10, 10, 0.627198) 22.7%,
+    rgba(0, 0, 0, 0) 57.6%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ideal-service__title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #fff;
+  z-index: 3;
+}
+
+.ideal-service__footer-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.ideal-service__footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9.125rem;
+  height: 2.125rem;
+  border-radius: 1rem;
+  z-index: 2;
+  backdrop-filter: blur(3px) saturate(1.5);
+  -webkit-backdrop-filter: blur(3px) saturate(1.5);
+  background-color: rgb(10, 10, 10, 0.38);
+}
+
+.ideal-service__animation {
+  position: absolute;
+  width: 9.125rem;
+}
+
+/* Breakpoint 960px */
+@media (min-width: 960px) {
+  .ideal-service__card {
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem 1.5rem;
+    width: 32rem;
+    min-height: 23.5rem;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .ideal-service__title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.0625rem;
+  }
+
+  .ideal-service__footer {
+    width: 12.5rem;
+    height: 3.5rem;
+    border-radius: 2rem;
+  }
+
+  .ideal-service__animation {
+    width: 11.5rem;
+  }
+}

@@ -1,0 +1,145 @@
+.hero-section {
+  width: 100%;
+  max-width: 1424px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem 1.5rem;
+  background-color: #096c76;
+  overflow: visible;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 10.875rem;
+  height: auto;
+}
+
+.hero-title-and-description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: -0.0625rem;
+  color: #ffffff;
+  font-weight: 400;
+  text-align: center;
+}
+
+.hero-highlight {
+  font-weight: 600;
+  color: #9cf0cd;
+}
+
+.hero-subtitle {
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.hero-appstore-btns {
+  margin-top: 1rem;
+}
+
+.hero-fake-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -2.25rem;
+  border-radius: 4.5rem;
+  background-color: #1c1c1c;
+  visibility: hidden;
+}
+
+/* Breakpoint 960px */
+@media (min-width: 960px) {
+  .hero-section {
+    margin: 3.5rem auto 0;
+    padding: 0 4.5rem;
+  }
+
+  .hero-card {
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 1.5rem;
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .hero-image {
+    width: 18rem;
+    max-width: 18rem;
+  }
+
+  .hero-title-and-description-container {
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.0625rem;
+    text-align: left;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1rem;
+    text-align: left;
+  }
+
+  .hero-fake-button {
+    width: 4rem;
+    height: 4rem;
+    bottom: -2rem;
+    visibility: visible;
+  }
+}
+
+/* Breakpoint 1340px */
+@media (min-width: 1340px) {
+  .hero-card {
+    padding: 4rem;
+  }
+
+  .hero-image {
+    width: 23rem;
+    max-width: 23rem;
+    margin-left: -1.5rem;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    letter-spacing: -0.0625rem;
+    text-align: left;
+    text-wrap: nowrap;
+    margin-top: -3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: left;
+  }
+
+  .hero-fake-button {
+    width: 4.5rem;
+    height: 4.5rem;
+    visibility: visible;
+  }
+}

@@ -1,12 +1,67 @@
-.servicesection--tag {
-  background: transparent;
-  color: #fff;
-  border: 1.5px solid #fff;
-  transition: background ease-in-out 200ms;
+.services-section {
+  width: 100%;
+  max-width: 1268px;
+  margin: 23rem auto 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.servicesection--tag:hover {
-  background: #fff;
+.services-section__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.025rem;
+  color: #096c76;
+  text-align: center;
+}
+
+.services-section__description {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.0625rem;
   color: #1c1c1c;
-  cursor: default;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.services-section__content_wrapper {
+  margin-top: 3.5rem;
+  display: flex;
+  gap: 1.125rem;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding: 0 1rem;
+}
+
+/* Esconde a barra de rolagem no Chrome, Safari e Opera */
+.services-section__content_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.services-section__content_left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+/* Breakpoint 960px */
+@media (min-width: 960px) {
+  .services-section__title {
+    font-size: 1rem;
+    letter-spacing: -0.0625rem;
+  }
+
+  .services-section__description {
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+  }
+
+  .services-section__content_wrapper {
+    margin-top: 7.5rem;
+    gap: 2rem;
+    padding: 0 4.5rem;
+  }
+
+  .services-section__content_left {
+    gap: 2rem;
+  }
 }

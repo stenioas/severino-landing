@@ -9,13 +9,13 @@ interface ValueCardProps {
 }
 
 const ValueCard: React.FC<ValueCardProps> = ({ icon, title, description }) => (
-  <Card shadow="none" className="step-card" aria-label={title}>
-    <CardHeader className="step-card-header">
+  <Card shadow="none" className="value-card" aria-label={title}>
+    <CardHeader className="value-card-header">
       <span>{icon}</span>
     </CardHeader>
-    <CardBody className="step-card-body">
-      <h2 className="step-title">{title}</h2>
-      <p className="step-description">{description}</p>
+    <CardBody className="value-card-body">
+      <h2 className="value-title">{title}</h2>
+      <p className="value-description">{description}</p>
     </CardBody>
   </Card>
 );

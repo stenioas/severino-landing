@@ -10,6 +10,7 @@ const steps = [
       <img
         src={getAssetUrl('/mystery.svg')}
         alt="Pesquise o serviço que deseja"
+        className="step-card-header-icon"
       />
     ),
     title: 'Pesquise o serviço que deseja',
@@ -22,6 +23,7 @@ const steps = [
       <img
         src={getAssetUrl('/engineering.svg')}
         alt="Escolha o tipo de profissional"
+        className="step-card-header-icon"
       />
     ),
     title: 'Escolha o tipo de profissional',
@@ -34,6 +36,7 @@ const steps = [
       <img
         src={getAssetUrl('/list_alt_add.svg')}
         alt="Preenchimento dos dados"
+        className="step-card-header-icon"
       />
     ),
     title: 'Preenchimento dos dados',
@@ -46,6 +49,7 @@ const steps = [
       <img
         src={getAssetUrl('/list_alt_check.svg')}
         alt="Aprovação da solicitação"
+        className="step-card-header-icon"
       />
     ),
     title: 'Aprovação da solicitação',
@@ -54,48 +58,18 @@ const steps = [
   },
 ];
 
+import './StepsSection.css';
+
 const StepsSection: React.FC = () => (
-  <section
-    aria-label="Solução em serviços"
-    style={{
-      width: '100%',
-      maxWidth: '1280px',
-      margin: '5rem auto 0',
-      padding: '0 1rem',
-      fontFamily: '"Open Sans", sans-serif',
-    }}
-  >
-    <h2
-      style={{
-        fontSize: '0.875rem',
-        fontWeight: '600',
-        letterSpacing: '-0.025rem',
-        color: '#096C76',
-        textAlign: 'center',
-      }}
-    >
+  <section aria-label="Solução em serviços" className="steps-section">
+    <h2 className="steps-section__title">
       {'Solução em serviços'.toUpperCase()}
     </h2>
-    <h3
-      style={{
-        fontSize: '1.5rem',
-        fontWeight: '600',
-        letterSpacing: '-0.0625rem',
-        color: '#1C1C1C',
-        textAlign: 'center',
-        marginTop: '1rem',
-      }}
-    >
-      Simplicidade na hora de contratar quem você precisa
+    <h3 className="steps-section__subtitle">
+      Simplicidade na hora de
+      <br /> contratar quem você precisa
     </h3>
-    <div
-      style={{
-        marginTop: '3.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1.75rem',
-      }}
-    >
+    <div className="steps-section__steps">
       {steps.map((step) => (
         <StepCard key={step.stepNumber} {...step} />
       ))}
