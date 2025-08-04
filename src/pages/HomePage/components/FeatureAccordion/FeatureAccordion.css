@@ -1,12 +1,63 @@
-.featureaccordion--base {
+.featureaccordion-section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 5rem auto 0;
+  padding: 0 0.75rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.featureaccordion-section__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.025rem;
+  color: #096c76;
+  text-align: center;
+}
+
+.featureaccordion-section__subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.0625rem;
+  color: #1c1c1c;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.featureaccordion-section__content_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.featureaccordion-section__parent_accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.featureaccordion-section__content_img_wrapper {
+  display: none;
+}
+
+.featureaccordion-section__children_accordion_base {
+  box-shadow: none;
+  background-color: #fff;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1c1c1c;
   padding: 0 1.25rem 0 0;
 }
 
-.featureaccordion--base.open {
-  padding: 1rem 1rem 0 1rem !important;
+.featureaccordion-section__children_accordion_base.open {
+  background-color: #fafafa;
+  padding: 1rem 1rem 0 !important;
 }
 
-.featureaccordion--title {
+.featureaccordion-section__children_accordion_title {
   font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: -0.0625rem;
@@ -14,16 +65,16 @@
   vertical-align: center;
 }
 
-.featureaccordion--title.open {
+.featureaccordion-section__children_accordion_title.open {
   color: #000;
 }
 
-.featureaccordion--trigger {
+.featureaccordion-section__children_accordion_trigger {
   padding: 0 !important;
   gap: 0.875rem;
 }
 
-.featureaccordion--startcontent {
+.featureaccordion-section__children_accordion_startcontent {
   width: 2.25rem;
   height: 2.25rem;
   border: 1px solid #e4e4e4;
@@ -37,13 +88,13 @@
   color: #7b7b7b;
 }
 
-.featureaccordion--startcontent.open {
+.featureaccordion-section__children_accordion_startcontent.open {
   border: 1px solid #096c76;
   color: #fff;
   background-color: #096c76;
 }
 
-.featureaccordion--content {
+.featureaccordion-section__children_accordion_content {
   font-size: 0.875rem;
   font-weight: 400;
   letter-spacing: -0.0625rem;
@@ -53,6 +104,88 @@
   padding: 0 !important;
 }
 
+.featureaccordion-section__children_accordion_img {
+  width: 328px;
+  margin-top: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .featureaccordion--indicator {
   color: #000;
+}
+
+/* Breakpoint 960px */
+@media (min-width: 960px) {
+  .featureaccordion-section {
+    margin: 12.5rem auto 0;
+    padding: 0 4.5rem;
+  }
+
+  .featureaccordion-section__title {
+    font-size: 1rem;
+    letter-spacing: -0.0625rem;
+  }
+
+  .featureaccordion-section__subtitle {
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+  }
+
+  .featureaccordion-section__content_wrapper {
+    margin-top: 7.5rem;
+  }
+
+  .featureaccordion-section__parent_accordion {
+    width: 100%;
+    max-width: 32rem;
+  }
+
+  .featureaccordion-section__content_img_wrapper.open {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #fafafa;
+    border-radius: 1.5rem;
+  }
+
+  .featureaccordion-section__content_img {
+    display: block;
+    width: 100%;
+    max-width: 39rem;
+    padding: 12% 10% 0;
+  }
+
+  .featureaccordion-section__children_accordion_base {
+    border-radius: 1rem;
+    padding: 0 1.5rem;
+  }
+
+  .featureaccordion-section__children_accordion_base.open {
+    padding: 1.5rem 1.5rem 2.25rem !important;
+  }
+
+  .featureaccordion-section__children_accordion_trigger {
+    gap: 3rem;
+  }
+
+  .featureaccordion-section__children_accordion_startcontent {
+    width: 3.375rem;
+    height: 3.375rem;
+  }
+
+  .featureaccordion-section__children_accordion_title {
+    font-size: 1.25rem;
+  }
+
+  .featureaccordion-section__children_accordion_content {
+    font-size: 1rem;
+    letter-spacing: -0.0625rem;
+    margin-top: 1.5rem;
+    padding: 0 0 0 6rem !important;
+  }
+
+  .featureaccordion-section__children_accordion_img {
+    display: none;
+  }
 }

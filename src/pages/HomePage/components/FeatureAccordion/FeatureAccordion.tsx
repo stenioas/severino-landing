@@ -48,118 +48,103 @@ const FeatureAccordion: React.FC = () => {
   }, []);
 
   const [selectedKeys, setSelectedKeys] = useState(new Set(['1']));
+  const [lastSelectedIdx, setLastSelectedIdx] = useState(1);
 
   const handleSelectionChange = (keys: Selection) => {
     setSelectedKeys(keys as Set<string>);
+    // Se houver algum selecionado, atualiza o último selecionado
+    const arr = Array.from(keys as Set<string>);
+    if (arr.length > 0) {
+      setLastSelectedIdx(Number(arr[arr.length - 1]));
+    }
+    console.log('Selected keys:', keys);
   };
 
   return (
     <section
-      style={{
-        width: '100%',
-        maxWidth: '1280px',
-        margin: '5rem auto 0',
-        padding: '0 0.75rem',
-        fontFamily: '"Open Sans", sans-serif',
-      }}
-      aria-label="Funcionalidades para transformar sua experiência"
+      className="featureaccordion-section"
+      aria-label="Cada funcionalidade para transformar sua experiência"
     >
-      <h2
-        style={{
-          fontSize: '0.875rem',
-          fontWeight: '600',
-          letterSpacing: '-0.025rem',
-          color: '#096C76',
-          textAlign: 'center',
-        }}
-      >
+      <h2 className="featureaccordion-section__title">
         {'Projetado para simplificar'.toUpperCase()}
       </h2>
-      <h3
-        style={{
-          fontSize: '1.5rem',
-          fontWeight: '600',
-          letterSpacing: '-0.0625rem',
-          color: '#1C1C1C',
-          textAlign: 'center',
-          marginTop: '1rem',
-        }}
-      >
-        Cada funcionalidade para transformar sua experiência
+      <h3 className="featureaccordion-section__subtitle">
+        Cada funcionalidade para
+        <br /> transformar sua experiência
       </h3>
-      <Accordion
-        variant="splitted"
-        isCompact
-        selectedKeys={selectedKeys}
-        onSelectionChange={handleSelectionChange}
-        defaultExpandedKeys={['1']}
-        itemClasses={{
-          trigger: 'featureaccordion--trigger',
-          indicator: 'featureaccordion--indicator',
-        }}
-        style={{
-          marginTop: '3.5rem',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1.5rem',
-          padding: 0,
-        }}
-      >
-        {features.map((feature, idx) => (
-          <AccordionItem
-            classNames={{
-              base: `featureaccordion--base ${selectedKeys.has((idx + 1).toString()) ? 'open' : ''}`,
-              content: 'featureaccordion--content',
-              title: `featureaccordion--title ${selectedKeys.has((idx + 1).toString()) ? 'open' : ''}`,
-            }}
-            key={idx + 1}
-            title={feature.title}
-            startContent={
-              <div
-                className={`featureaccordion--startcontent ${selectedKeys.has((idx + 1).toString()) ? 'open' : ''}`}
-              >
-                {idx + 1}
-              </div>
-            }
-            indicator={({ isOpen }) =>
-              isOpen ? (
-                <ChevronRightIcon size={16} color="#000000" />
-              ) : (
-                <ChevronDownIcon size={16} color="#000000" />
-              )
-            }
-            aria-expanded={selectedKeys.has((idx + 1).toString())}
-            aria-controls={`feature-panel-${idx}`}
-            style={{
-              boxShadow: 'none',
-              backgroundColor: selectedKeys.has((idx + 1).toString())
-                ? '#FAFAFA'
-                : '#FFFFFF',
-              borderRadius: '10px',
-              fontSize: '1rem',
-              fontWeight: '600',
-              color: '#1C1C1C',
-            }}
-          >
+      <div className="featureaccordion-section__content_wrapper">
+        {features.map((feature, idx) => {
+          // Se houver algum selecionado, mostra a imagem correspondente; se não, mostra a última selecionada
+          const isOpen =
+            selectedKeys.size > 0
+              ? selectedKeys.has((idx + 1).toString())
+              : lastSelectedIdx === idx + 1;
+          return (
             <div
-              id={`feature-panel-${idx}`}
-              role="region"
-              aria-labelledby={`feature-title-${idx}`}
+              key={idx}
+              className={`featureaccordion-section__content_img_wrapper ${isOpen ? 'open' : ''}`}
             >
-              {feature.content}
               <img
                 src={getAssetUrl(feature.img)}
-                style={{
-                  width: '328px',
-                  marginTop: '1.25rem',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                }}
+                className="featureaccordion-section__content_img"
               />
             </div>
-          </AccordionItem>
-        ))}
-      </Accordion>
+          );
+        })}
+        <Accordion
+          variant="splitted"
+          isCompact
+          selectedKeys={selectedKeys}
+          onSelectionChange={handleSelectionChange}
+          defaultExpandedKeys={['1']}
+          itemClasses={{
+            trigger: 'featureaccordion-section__children_accordion_trigger',
+            indicator: 'featureaccordion--indicator',
+          }}
+          className="featureaccordion-section__parent_accordion"
+        >
+          {features.map((feature, idx) => (
+            <AccordionItem
+              classNames={{
+                base: `featureaccordion-section__children_accordion_base ${selectedKeys.has((idx + 1).toString()) ? 'open' : ''}`,
+                content:
+                  'featureaccordion-section__children_accordion_content',
+                title: `featureaccordion-section__children_accordion_title ${selectedKeys.has((idx + 1).toString()) ? 'open' : ''}`,
+              }}
+              key={idx + 1}
+              title={feature.title}
+              startContent={
+                <div
+                  className={`featureaccordion-section__children_accordion_startcontent ${selectedKeys.has((idx + 1).toString()) ? 'open' : ''}`}
+                >
+                  {idx + 1}
+                </div>
+              }
+              indicator={({ isOpen }) =>
+                isOpen ? (
+                  <ChevronRightIcon size={16} color="#000000" />
+                ) : (
+                  <ChevronDownIcon size={16} color="#000000" />
+                )
+              }
+              aria-expanded={selectedKeys.has((idx + 1).toString())}
+              aria-controls={`feature-panel-${idx}`}
+            >
+              <div
+                id={`feature-panel-${idx}`}
+                role="region"
+                aria-labelledby={`feature-title-${idx}`}
+              >
+                {feature.content}
+                <img
+                  src={getAssetUrl(feature.img)}
+                  className="featureaccordion-section__children_accordion_img"
+                />
+              </div>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
     </section>
   );
 };
