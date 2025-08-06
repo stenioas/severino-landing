@@ -1,6 +1,7 @@
 import React from 'react';
 import ValueCard from '../ValueCard';
 
+import './ValueSection.css';
 import { getAssetUrl } from '../../../../utils/getAssetUrl';
 
 const ValueCardProps = [
@@ -45,34 +46,9 @@ const ValueCardProps = [
 ];
 
 const ValuesSection: React.FC = () => (
-  <section
-    aria-label="Nossos valores"
-    style={{
-      width: '100%',
-      maxWidth: '1280px',
-      margin: '4.5rem auto 0',
-      padding: '0 1rem',
-      fontFamily: '"Open Sans", sans-serif',
-    }}
-  >
-    <h2
-      style={{
-        fontSize: '1.5rem',
-        fontWeight: '600',
-        letterSpacing: '-0.0625rem',
-        color: '#1C1C1C',
-      }}
-    >
-      Nossos valores
-    </h2>
-    <div
-      style={{
-        marginTop: '2.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1.75rem',
-      }}
-    >
+  <section aria-label="Nossos valores" className="values-section">
+    <h2 className="values-section__title">Nossos valores</h2>
+    <div className="values-section__list">
       {ValueCardProps.map((step, index) => (
         <ValueCard key={index} {...step} />
       ))}
