@@ -1,4 +1,4 @@
-import { Card } from '@heroui/react';
+import { Button, Card } from '@heroui/react';
 import AppStoreButtons from '../../../../components/AppStoreButtons';
 import { getAssetUrl } from '../../../../utils/getAssetUrl';
 
@@ -6,6 +6,15 @@ import './HeroSection.css';
 import { ChevronDownIcon } from '../../../../icons';
 
 const HeroSection: React.FC = () => {
+  const handleHeroButtonClick = () => {
+    const stepsTitle = document.getElementById('steps-section-title');
+    if (stepsTitle) {
+      const y =
+        stepsTitle.getBoundingClientRect().top + window.pageYOffset - 128;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero-section">
       <Card className="hero-card" shadow="none" aria-label="Hero section card">
@@ -30,9 +39,13 @@ const HeroSection: React.FC = () => {
             <AppStoreButtons />
           </div>
         </div>
-        <div className="hero-fake-button">
+        <Button
+          isIconOnly
+          className="hero-button"
+          onPress={handleHeroButtonClick}
+        >
           <ChevronDownIcon color="#FFFFFF" size={16} />
-        </div>
+        </Button>
       </Card>
     </section>
   );

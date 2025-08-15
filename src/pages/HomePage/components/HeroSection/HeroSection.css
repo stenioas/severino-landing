@@ -54,7 +54,7 @@
   margin-top: 1rem;
 }
 
-.hero-fake-button {
+.hero-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +63,10 @@
   border-radius: 4.5rem;
   background-color: #1c1c1c;
   visibility: hidden;
+}
+
+.hero-button:hover {
+  opacity: 1;
 }
 
 /* Breakpoint 960px */
@@ -102,7 +106,7 @@
     text-align: left;
   }
 
-  .hero-fake-button {
+  .hero-button {
     width: 4rem;
     height: 4rem;
     bottom: -2rem;
@@ -137,7 +141,7 @@
     text-align: left;
   }
 
-  .hero-fake-button {
+  .hero-button {
     width: 4.5rem;
     height: 4.5rem;
     visibility: visible;

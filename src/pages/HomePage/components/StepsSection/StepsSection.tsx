@@ -62,7 +62,7 @@ import './StepsSection.css';
 
 const StepsSection: React.FC = () => (
   <section aria-label="Solução em serviços" className="steps-section">
-    <h2 className="steps-section__title">
+    <h2 id="steps-section-title" className="steps-section__title">
       {'Solução em serviços'.toUpperCase()}
     </h2>
     <h3 className="steps-section__subtitle">
