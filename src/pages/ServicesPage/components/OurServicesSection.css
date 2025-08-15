@@ -118,4 +118,13 @@
     height: 7.75rem;
     padding: 1.5rem 1rem;
   }
+
+  .our-services-section__card-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .our-services-section__card-label {
+    font-size: 0.875rem;
+  }
 }
