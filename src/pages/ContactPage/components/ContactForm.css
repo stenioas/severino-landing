@@ -36,7 +36,7 @@
 }
 
 .contact--input {
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 0px;
   color: #1c1c1c;
@@ -45,7 +45,7 @@
 .contact--input::placeholder {
   background-color: transparent;
   color: #aaaaaa;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 0px;
 }
@@ -64,12 +64,13 @@
 .contact--textarea {
   height: 100% !important;
   max-height: 100% !important;
+  font-size: 1rem;
 }
 
 .contact--textarea::placeholder {
   background-color: transparent;
   color: #aaaaaa;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 0px;
 }
