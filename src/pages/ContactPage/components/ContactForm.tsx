@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import './ContactForm.css';
 import { CheckIcon } from '@heroicons/react/16/solid';
 import { XMarkIcon } from '@heroicons/react/16/solid';
+import { sendContactForm } from '../../../api/contactApi';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -26,13 +27,18 @@ const ContactForm = () => {
     if (!name || !email || !message) return;
 
     setStatus('sending');
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-      setName('');
-      setEmail('');
-      setMessage('');
-    }, 2000);
+    sendContactForm({ name, email, message })
+      .then((response) => {
+        if (response.status === 200) {
+          setStatus('success');
+          setEmail('');
+        } else {
+          setStatus('error');
+        }
+      })
+      .catch(() => {
+        setStatus('error');
+      });
   };
 
   const handlePopoverClose = () => {
