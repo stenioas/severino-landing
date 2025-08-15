@@ -57,19 +57,6 @@
   z-index: 3;
 }
 
-.professional-efficiency__button {
-  position: absolute;
-  z-index: 3;
-  bottom: 1.25rem;
-  right: 1.25rem;
-  background-color: #ffffff;
-  border-radius: 0.5rem;
-  color: #096c76;
-  font-size: 0.875rem;
-  font-weight: 600;
-  padding: 0.625rem 1rem;
-}
-
 /* Breakpoint 960px */
 @media (min-width: 960px) {
   .professional-efficiency {
@@ -87,14 +74,5 @@
     font-size: 1.125rem;
     letter-spacing: -0.05rem;
     margin-top: 1.25rem;
-  }
-
-  .professional-efficiency__button {
-    height: 3.5rem;
-    bottom: 2rem;
-    right: 2rem;
-    font-size: 1rem;
-    border-radius: 0.75rem;
-    padding: 1rem 2rem;
   }
 }

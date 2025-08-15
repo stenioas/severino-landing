@@ -1,4 +1,3 @@
-import { Button } from '@heroui/react';
 import { getAssetUrl } from '../../../../../../utils/getAssetUrl';
 import './ProfessionalEfficiency.css';
 
@@ -18,13 +17,6 @@ const ProfessionalEfficiency = () => (
       Nossos prestadores passam por uma análise de perfil criteriosa antes de
       iniciarem qualquer tipo de serviço.
     </p>
-    <Button
-      color="primary"
-      size="md"
-      className="professional-efficiency__button"
-    >
-      Mais detalhes
-    </Button>
   </div>
 );
 
