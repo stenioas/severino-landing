@@ -1,7 +1,7 @@
 .contactpage--section {
   width: 100%;
-  max-width: 1100px;
-  margin: 3rem auto 0;
+  max-width: 1098px;
+  margin: 2rem auto 0;
   padding: 0 1rem;
   font-family: 'Open Sans', sans-serif;
 }
@@ -28,13 +28,13 @@
 /* Breakpoint 960px */
 @media (min-width: 960px) {
   .contactpage--section {
+    margin-top: 7.5rem;
     padding: 0 4.5rem;
   }
 
   .contactpage--title {
     font-size: 2.5rem;
-    line-height: 100%;
-    margin-top: 7.5rem;
+    line-height: 3.25rem;
   }
 
   .contactpage--description-and-form-wrapper {
