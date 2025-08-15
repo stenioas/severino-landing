@@ -1,6 +1,6 @@
 .our-services-section {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1098px;
   margin: 4.5rem auto 0;
   padding: 0 1rem;
   font-family: 'Open Sans', sans-serif;
@@ -21,11 +21,17 @@
   margin-top: 2rem;
 }
 
+.our-services-section__card-container {
+  width: 100%;
+  max-width: 30rem;
+  margin: 2rem auto 0;
+}
+
 .our-services-section__subtitle {
-  margin-top: 2rem;
   font-size: 0.75rem;
   line-height: 1rem;
   letter-spacing: 0;
+  color: #1c1c1c;
 }
 
 .our-services-section__cards {
@@ -33,22 +39,20 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 43.25rem;
+  margin: 1.5rem auto 0;
 }
 
 .our-services-section__card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   flex-grow: 1;
-  gap: 6px;
+  gap: 0.375rem;
   width: 5rem;
   padding: 1rem 1rem;
   background: #fff;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   border: 1px solid #e8e6e7;
 }
 
@@ -71,4 +75,47 @@
 
 .our-services-section__card-label-active {
   color: #ffffff;
+}
+
+/* Breakpoint 960px */
+@media (min-width: 960px) {
+  .our-services-section {
+    margin-top: 11rem;
+    padding: 0 4.5rem;
+  }
+
+  .our-services-section__title {
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+    letter-spacing: -0.0625rem;
+  }
+
+  .our-services-section__description {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    letter-spacing: -0.0625rem;
+    margin-top: 4.5rem;
+    max-width: 860px;
+  }
+
+  .our-services-section__card-container {
+    margin-top: 4.75rem;
+    max-width: 43.25rem;
+  }
+
+  .our-services-section__subtitle {
+    font-size: 0.875rem;
+  }
+
+  .our-services-section__cards {
+    margin-top: 2.5rem;
+    max-width: 42.75rem;
+  }
+
+  .our-services-section__card {
+    gap: 0.5rem;
+    width: 7.75rem;
+    height: 7.75rem;
+    padding: 1.5rem 1rem;
+  }
 }

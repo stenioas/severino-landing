@@ -94,7 +94,7 @@ const OurServicesSection = () => {
         profissionais experientes e preparados para atender às suas
         necessidades, seja em casa, no trabalho ou onde quiser.
       </p>
-      <div style={{ width: '100%', maxWidth: '692px', margin: '0 auto' }}>
+      <div className="our-services-section__card-container">
         <h3 className="our-services-section__subtitle">
           Serviços disponíveis no momento
         </h3>
