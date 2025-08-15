@@ -1,7 +1,7 @@
 .services-section {
   width: 100%;
   max-width: 1268px;
-  margin: 23rem auto 0;
+  margin: 5rem auto 0;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -45,6 +45,10 @@
 
 /* Breakpoint 960px */
 @media (min-width: 960px) {
+  .services-section {
+    margin-top: 23rem;
+  }
+
   .services-section__title {
     font-size: 1rem;
     letter-spacing: -0.0625rem;
