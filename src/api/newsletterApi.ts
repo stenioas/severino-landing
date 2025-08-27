@@ -1,11 +1,17 @@
 import axios from 'axios';
+import { loadApiConfig } from '../utils/loadConfig';
 
-const API_BASE_URL = 'https://severino.onrender.com/emailSubscribe';
+const apiConfig = await loadApiConfig().catch((error) => {
+  console.error('Failed to load API config:', error);
+  throw error;
+});
+
+const ENDPOINT_URL = apiConfig.BACKEND_URL + apiConfig.NEWLETTER_ENDPOINT;
 
 export const saveNewsletterEmail = async (email: string) => {
   try {
     const response = await axios.post(
-      API_BASE_URL,
+      ENDPOINT_URL,
       { email },
       {
         headers: {

@@ -1,6 +1,12 @@
 import axios from 'axios';
+import { loadApiConfig } from '../utils/loadConfig';
 
-const API_BASE_URL = 'https://severino.onrender.com/contactEmail';
+const apiConfig = await loadApiConfig().catch((error) => {
+  console.error('Failed to load API config:', error);
+  throw error;
+});
+
+const ENDPOINT_URL = apiConfig.BACKEND_URL + apiConfig.CONTACT_ENDPOINT;
 
 type ContactFormData = {
   name: string;
@@ -10,7 +16,7 @@ type ContactFormData = {
 
 export const sendContactForm = async (data: ContactFormData) => {
   try {
-    const response = await axios.post(API_BASE_URL, data, {
+    const response = await axios.post(ENDPOINT_URL, data, {
       headers: {
         'Content-Type': 'application/json',
       },

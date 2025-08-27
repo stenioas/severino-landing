@@ -1,0 +1,5 @@
+{
+  "BACKEND_URL": "https://severino-backend.fly.dev",
+  "NEWLETTER_ENDPOINT": "/emailSubscribe",
+  "CONTACT_ENDPOINT": "/contactEmail"
+}
