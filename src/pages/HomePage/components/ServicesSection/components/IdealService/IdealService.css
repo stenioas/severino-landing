@@ -97,11 +97,12 @@
 
   .ideal-service__footer {
     width: 12.5rem;
-    height: 3.5rem;
+    height: 3.25rem;
     border-radius: 2rem;
   }
 
   .ideal-service__animation {
-    width: 11.5rem;
+    width: 12rem;
+    height: 3.25rem;
   }
 }
