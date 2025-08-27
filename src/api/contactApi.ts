@@ -1,13 +1,6 @@
 import axios from 'axios';
 import { loadApiConfig } from '../utils/loadConfig';
 
-const apiConfig = await loadApiConfig().catch((error) => {
-  console.error('Failed to load API config:', error);
-  throw error;
-});
-
-const ENDPOINT_URL = apiConfig.BACKEND_URL + apiConfig.CONTACT_ENDPOINT;
-
 type ContactFormData = {
   name: string;
   email: string;
@@ -16,6 +9,8 @@ type ContactFormData = {
 
 export const sendContactForm = async (data: ContactFormData) => {
   try {
+    const apiConfig = await loadApiConfig();
+    const ENDPOINT_URL = apiConfig.BACKEND_URL + apiConfig.CONTACT_ENDPOINT;
     const response = await axios.post(ENDPOINT_URL, data, {
       headers: {
         'Content-Type': 'application/json',

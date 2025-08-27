@@ -1,12 +1,12 @@
 import { getAssetUrl } from './getAssetUrl';
 
-type ApiConfig = {
+export type ApiConfigResponse = {
   BACKEND_URL: string;
-  NEWLETTER_ENDPOINT: string;
+  NEWSLETTER_ENDPOINT: string;
   CONTACT_ENDPOINT: string;
 };
 
-export async function loadApiConfig(): Promise<ApiConfig> {
+export async function loadApiConfig(): Promise<ApiConfigResponse> {
   const response = await fetch(getAssetUrl('/config/apiConfig.json'));
   if (!response.ok)
     throw new Error('Arquivo de configuração da api não encontrado!');
