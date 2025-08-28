@@ -31,6 +31,8 @@ const ContactForm = () => {
       .then((response) => {
         if (response.status === 200) {
           setStatus('success');
+          setName('');
+          setMessage('');
           setEmail('');
         } else {
           setStatus('error');
