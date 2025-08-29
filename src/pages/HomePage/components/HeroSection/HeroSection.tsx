@@ -42,6 +42,7 @@ const HeroSection: React.FC = () => {
         <Button
           isIconOnly
           className="hero-button"
+          aria-label='Rolar para a seção "Solução em Serviços"'
           onPress={handleHeroButtonClick}
         >
           <ChevronDownIcon color="#FFFFFF" size={16} />

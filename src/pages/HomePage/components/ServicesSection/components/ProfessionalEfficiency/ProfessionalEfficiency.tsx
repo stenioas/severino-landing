@@ -2,7 +2,11 @@ import { getAssetUrl } from '../../../../../../utils/getAssetUrl';
 import './ProfessionalEfficiency.css';
 
 const ProfessionalEfficiency = () => (
-  <div className="professional-efficiency" role="listitem">
+  <div
+    className="professional-efficiency"
+    role="region"
+    aria-label="Eficiência profissional"
+  >
     <img
       src={getAssetUrl('/img/professional_painter.png')}
       alt="Profissional de pintura"

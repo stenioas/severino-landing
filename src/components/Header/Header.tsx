@@ -43,7 +43,6 @@ const Header: React.FC = () => {
       isBlurred={false}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      role="banner"
       maxWidth="xl"
       shouldHideOnScroll
       className="header--navbar"

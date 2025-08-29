@@ -57,7 +57,6 @@ const FeatureAccordion: React.FC = () => {
     if (arr.length > 0) {
       setLastSelectedIdx(Number(arr[arr.length - 1]));
     }
-    console.log('Selected keys:', keys);
   };
 
   return (
@@ -86,6 +85,7 @@ const FeatureAccordion: React.FC = () => {
             >
               <img
                 src={getAssetUrl(feature.img)}
+                alt={feature.title}
                 className="featureaccordion-section__content_img"
               />
             </div>
@@ -103,46 +103,50 @@ const FeatureAccordion: React.FC = () => {
           }}
           className="featureaccordion-section__parent_accordion"
         >
-          {features.map((feature, idx) => (
-            <AccordionItem
-              classNames={{
-                base: `featureaccordion-section__children_accordion_base ${selectedKeys.has((idx + 1).toString()) ? 'open' : ''}`,
-                content:
-                  'featureaccordion-section__children_accordion_content',
-                title: `featureaccordion-section__children_accordion_title ${selectedKeys.has((idx + 1).toString()) ? 'open' : ''}`,
-              }}
-              key={idx + 1}
-              title={feature.title}
-              startContent={
-                <div
-                  className={`featureaccordion-section__children_accordion_startcontent ${selectedKeys.has((idx + 1).toString()) ? 'open' : ''}`}
-                >
-                  {idx + 1}
-                </div>
-              }
-              indicator={({ isOpen }) =>
-                isOpen ? (
-                  <ChevronRightIcon size={16} color="#000000" />
-                ) : (
-                  <ChevronDownIcon size={16} color="#000000" />
-                )
-              }
-              aria-expanded={selectedKeys.has((idx + 1).toString())}
-              aria-controls={`feature-panel-${idx}`}
-            >
-              <div
-                id={`feature-panel-${idx}`}
-                role="region"
-                aria-labelledby={`feature-title-${idx}`}
+          {features.map((feature, idx) => {
+            const isOpen = selectedKeys.has((idx + 1).toString());
+            return (
+              <AccordionItem
+                classNames={{
+                  base: `featureaccordion-section__children_accordion_base ${isOpen ? 'open' : ''}`,
+                  content:
+                    'featureaccordion-section__children_accordion_content',
+                  title: `featureaccordion-section__children_accordion_title ${isOpen ? 'open' : ''}`,
+                }}
+                key={idx + 1}
+                title={feature.title}
+                startContent={
+                  <div
+                    className={`featureaccordion-section__children_accordion_startcontent ${isOpen ? 'open' : ''}`}
+                  >
+                    {idx + 1}
+                  </div>
+                }
+                indicator={({ isOpen }) =>
+                  isOpen ? (
+                    <ChevronRightIcon size={16} color="#000000" />
+                  ) : (
+                    <ChevronDownIcon size={16} color="#000000" />
+                  )
+                }
               >
-                {feature.content}
-                <img
-                  src={getAssetUrl(feature.img)}
-                  className="featureaccordion-section__children_accordion_img"
-                />
-              </div>
-            </AccordionItem>
-          ))}
+                {isOpen && (
+                  <div
+                    id={`feature-panel-${idx}`}
+                    role="region"
+                    aria-labelledby={`feature-title-${idx}`}
+                  >
+                    {feature.content}
+                    <img
+                      src={getAssetUrl(feature.img)}
+                      alt={feature.title}
+                      className="featureaccordion-section__children_accordion_img"
+                    />
+                  </div>
+                )}
+              </AccordionItem>
+            );
+          })}
         </Accordion>
       </div>
     </section>

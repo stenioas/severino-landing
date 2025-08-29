@@ -74,12 +74,12 @@ const NewsletterForm: React.FC = () => {
       aria-label="Assine nossa newsletter"
     >
       <Card shadow="none" className="newsletter--card">
-        <h4 className="newsletter--title">
+        <h3 className="newsletter--title">
           Venha{' '}
           <span className="newsletter--title-highlight">com a gente</span>{' '}
           fazer parte{' '}
           <span className="newsletter--title-highlight">dessa revolução</span>
-        </h4>
+        </h3>
         <p className="newsletter--description">
           Não perca nenhuma novidade! Receba atualizações do app, promoções
           exclusivas, novos serviços, parcerias incríveis e muito mais.
@@ -100,6 +100,7 @@ const NewsletterForm: React.FC = () => {
           <PopoverTrigger>
             <form
               className="newsletter--form"
+              aria-label="Formulário para assinar a newsletter"
               onSubmit={(e) => {
                 handleSubmit();
                 e.preventDefault();
