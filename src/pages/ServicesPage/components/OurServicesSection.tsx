@@ -65,9 +65,10 @@ const ourServicesData = [
   },
 ];
 
-const ServiceCard = (label: string, icon: string) => {
+const ServiceCard = (label: string, icon: string, index: number) => {
   return (
     <div
+      key={index}
       className={`our-services-section__card ${label === 'Mais serviços em breve' ? 'our-services-section__card-active' : ''}`}
     >
       <img
@@ -99,7 +100,9 @@ const OurServicesSection = () => {
           Serviços disponíveis no momento
         </h3>
         <div className="our-services-section__cards">
-          {ourServicesData.map((item) => ServiceCard(item.label, item.icon))}
+          {ourServicesData.map((item, index) =>
+            ServiceCard(item.label, item.icon, index),
+          )}
         </div>
       </div>
     </section>

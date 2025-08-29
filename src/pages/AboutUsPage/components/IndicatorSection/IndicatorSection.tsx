@@ -184,6 +184,7 @@ const IndicatorSection: React.FC = () => {
           isIconOnly
           variant="bordered"
           onPress={handleScrollLeft}
+          aria-label={'Scroll para esquerda'}
         >
           <ArrowLeftIcon
             className={`indicator-section--indicators-arrow-icon ${!isAtStart ? 'active' : ''}`}
@@ -194,6 +195,7 @@ const IndicatorSection: React.FC = () => {
           isIconOnly
           variant="bordered"
           onPress={handleScrollRight}
+          aria-label={'Scroll para direita'}
         >
           <ArrowRightIcon
             className={`indicator-section--indicators-arrow-icon ${!isAtEnd ? 'active' : ''}`}
