@@ -16,7 +16,7 @@ const forWhoData = [
     cardImgText: 'Cliente: Paula Andrade',
     cardIcon: (
       <img
-        src={getAssetUrl('touch_app.svg')}
+        src={getAssetUrl('/svg/touch_app.svg')}
         alt="Ícone de dedo tocando a tela"
       />
     ),
@@ -33,7 +33,7 @@ const forWhoData = [
     cardImgText: 'Prestador: Paulo Marques',
     cardIcon: (
       <img
-        src={getAssetUrl('valve.svg')}
+        src={getAssetUrl('/svg/valve.svg')}
         alt="Ícone de válvula de encanamento"
       />
     ),

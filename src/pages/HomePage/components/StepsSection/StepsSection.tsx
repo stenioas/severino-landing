@@ -8,7 +8,7 @@ const steps = [
     stepNumber: 1,
     icon: (
       <img
-        src={getAssetUrl('/mystery.svg')}
+        src={getAssetUrl('/svg/mystery.svg')}
         alt="Pesquise o serviço que deseja"
         className="step-card-header-icon"
       />
@@ -21,7 +21,7 @@ const steps = [
     stepNumber: 2,
     icon: (
       <img
-        src={getAssetUrl('/engineering.svg')}
+        src={getAssetUrl('/svg/engineering.svg')}
         alt="Escolha o tipo de profissional"
         className="step-card-header-icon"
       />
@@ -34,7 +34,7 @@ const steps = [
     stepNumber: 3,
     icon: (
       <img
-        src={getAssetUrl('/list_alt_add.svg')}
+        src={getAssetUrl('/svg/list_alt_add.svg')}
         alt="Preenchimento dos dados"
         className="step-card-header-icon"
       />
@@ -47,7 +47,7 @@ const steps = [
     stepNumber: 4,
     icon: (
       <img
-        src={getAssetUrl('/list_alt_check.svg')}
+        src={getAssetUrl('/svg/list_alt_check.svg')}
         alt="Aprovação da solicitação"
         className="step-card-header-icon"
       />

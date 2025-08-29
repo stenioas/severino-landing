@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
     <section className="hero-section">
       <Card className="hero-card" shadow="none" aria-label="Hero section card">
         <img
-          src={getAssetUrl('hero-illustration.svg')}
+          src={getAssetUrl('/svg/hero-illustration.svg')}
           alt="Ilustração de contratação de serviços"
           className="hero-image"
         />

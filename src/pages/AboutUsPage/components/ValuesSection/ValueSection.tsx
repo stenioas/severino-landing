@@ -7,7 +7,10 @@ import { getAssetUrl } from '../../../../utils/getAssetUrl';
 const ValueCardProps = [
   {
     icon: (
-      <img src={getAssetUrl('/handshake.svg')} alt="Relações de confiança" />
+      <img
+        src={getAssetUrl('/svg/handshake.svg')}
+        alt="Relações de confiança"
+      />
     ),
     title: 'Relações de confiança',
     description:
@@ -16,7 +19,7 @@ const ValueCardProps = [
   {
     icon: (
       <img
-        src={getAssetUrl('/diamond.svg')}
+        src={getAssetUrl('/svg/diamond.svg')}
         alt="Compromisso com a qualidade"
       />
     ),
@@ -27,7 +30,7 @@ const ValueCardProps = [
   {
     icon: (
       <img
-        src={getAssetUrl('/smartphone.svg')}
+        src={getAssetUrl('/svg/smartphone.svg')}
         alt="Simplicidade que resolve"
       />
     ),
@@ -37,7 +40,10 @@ const ValueCardProps = [
   },
   {
     icon: (
-      <img src={getAssetUrl('/diversity.svg')} alt="Valorização de pessoas" />
+      <img
+        src={getAssetUrl('/svg/diversity.svg')}
+        alt="Valorização de pessoas"
+      />
     ),
     title: 'Valorização de pessoas',
     description:

@@ -42,7 +42,7 @@ const AppStoreButtons = () => {
           );
         }}
       >
-        <img src={getAssetUrl('play_store.svg')} alt="Play Store" />
+        <img src={getAssetUrl('/svg/play_store.svg')} alt="Play Store" />
       </Button>
 
       <Popover
@@ -63,7 +63,7 @@ const AppStoreButtons = () => {
               handlePopoverOpen();
             }}
           >
-            <img src={getAssetUrl('app_store.svg')} alt="App Store" />
+            <img src={getAssetUrl('/svg/app_store.svg')} alt="App Store" />
           </Button>
         </PopoverTrigger>
         <PopoverContent>

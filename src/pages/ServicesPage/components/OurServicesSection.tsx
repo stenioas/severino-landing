@@ -5,63 +5,63 @@ import './OurServicesSection.css';
 const ourServicesData = [
   {
     label: 'Chaveiro',
-    icon: getAssetUrl('/key.svg'),
+    icon: getAssetUrl('/svg/key.svg'),
   },
   {
     label: 'Coberturas e fachadas',
-    icon: getAssetUrl('/home_work.svg'),
+    icon: getAssetUrl('/svg/home_work.svg'),
   },
   {
     label: 'Decoração',
-    icon: getAssetUrl('/table_lamp.svg'),
+    icon: getAssetUrl('/svg/table_lamp.svg'),
   },
   {
     label: 'Elétrica',
-    icon: getAssetUrl('/electrical_services.svg'),
+    icon: getAssetUrl('/svg/electrical_services.svg'),
   },
   {
     label: 'Hidráulica',
-    icon: getAssetUrl('/shower.svg'),
+    icon: getAssetUrl('/svg/shower.svg'),
   },
   {
     label: 'Instalação de telas',
-    icon: getAssetUrl('/curtains.svg'),
+    icon: getAssetUrl('/svg/curtains.svg'),
   },
   {
     label: 'Jardinagem',
-    icon: getAssetUrl('/potted_plant.svg'),
+    icon: getAssetUrl('/svg/potted_plant.svg'),
   },
   {
     label: 'limpeza pós-obra',
-    icon: getAssetUrl('/garden_cart.svg'),
+    icon: getAssetUrl('/svg/garden_cart.svg'),
   },
   {
     label: 'Pequenos reparos',
-    icon: getAssetUrl('/engineering_gears.svg'),
+    icon: getAssetUrl('/svg/engineering_gears.svg'),
   },
   {
     label: 'Pintura',
-    icon: getAssetUrl('/format_paint.svg'),
+    icon: getAssetUrl('/svg/format_paint.svg'),
   },
   {
     label: 'Vidraçaria',
-    icon: getAssetUrl('/window.svg'),
+    icon: getAssetUrl('/svg/window.svg'),
   },
   {
     label: 'Serviços gerais',
-    icon: getAssetUrl('/cleaning_services.svg'),
+    icon: getAssetUrl('/svg/cleaning_services.svg'),
   },
   {
     label: 'Serviços domésticos',
-    icon: getAssetUrl('/vacuum.svg'),
+    icon: getAssetUrl('/svg/vacuum.svg'),
   },
   {
     label: 'Serviços de marcenaria',
-    icon: getAssetUrl('/carpenter.svg'),
+    icon: getAssetUrl('/svg/carpenter.svg'),
   },
   {
     label: 'Mais serviços em breve',
-    icon: getAssetUrl('/add_circle.svg'),
+    icon: getAssetUrl('/svg/add_circle.svg'),
   },
 ];
 
@@ -86,7 +86,7 @@ const ServiceCard = (label: string, icon: string) => {
 
 const OurServicesSection = () => {
   return (
-    <section aria-label="Nossos valores" className="our-services-section">
+    <section aria-label="Nossos serviços" className="our-services-section">
       <h2 className="our-services-section__title">Nossos serviços</h2>
       <p className="our-services-section__description">
         No Severino App, cada serviço disponível foi pensado para facilitar o

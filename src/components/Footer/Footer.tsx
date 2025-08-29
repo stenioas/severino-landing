@@ -8,13 +8,13 @@ const Footer: React.FC = () => (
   <footer className="footer" role="contentinfo">
     <div className="logo-and-email">
       <img
-        src={getAssetUrl('logo.svg')}
+        src={getAssetUrl('/svg/logo.svg')}
         alt="Severino logo"
         className="logo"
       />
       <div className="email-section">
         <img
-          src={getAssetUrl('email.svg')}
+          src={getAssetUrl('/svg/email.svg')}
           alt="Email"
           className="email-icon"
         />
@@ -33,7 +33,7 @@ const Footer: React.FC = () => (
             aria-label="Instagram"
             className="social-link"
           >
-            <img src={getAssetUrl('instagram.svg')} alt="Instagram" />
+            <img src={getAssetUrl('/svg/instagram.svg')} alt="Instagram" />
           </Link>
         </div>
         <div className="social">
@@ -43,7 +43,7 @@ const Footer: React.FC = () => (
             aria-label="LinkedIn"
             className="social-link"
           >
-            <img src={getAssetUrl('linkedin.svg')} alt="LinkedIn" />
+            <img src={getAssetUrl('/svg/linkedin.svg')} alt="LinkedIn" />
           </Link>
         </div>
       </div>

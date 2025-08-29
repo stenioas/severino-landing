@@ -161,7 +161,9 @@ const NewsletterForm: React.FC = () => {
         <img
           className="newsletter--img"
           src={getAssetUrl(
-            isDesktop ? 'newsletter_tools_large.svg' : 'newsletter_tools.svg',
+            isDesktop
+              ? '/svg/newsletter_tools_large.svg'
+              : '/svg/newsletter_tools.svg',
           )}
           alt="Ilustração com ferramentas"
         />
