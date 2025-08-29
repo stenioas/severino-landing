@@ -2,6 +2,32 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Severino App. Contrate Profissionais de serviço de forma rápida com facilidade e segurança. Conectamos você aos melhores serviços para ajudar no seu dia a dia."
+    />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Severino App" />
+    <meta
+      property="og:description"
+      content="Severino App. Contrate Profissionais de serviço de forma rápida com facilidade e segurança. Conectamos você aos melhores serviços para ajudar no seu dia a dia."
+    />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:url" content="https://severino.app.br/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Severino App" />
+    <meta
+      name="twitter:description"
+      content="Severino App. Contrate Profissionais de serviço de forma rápida com facilidade e segurança. Conectamos você aos melhores serviços para ajudar no seu dia a dia."
+    />
+    <meta name="twitter:image" content="/favicon.svg" />
+    <meta
+      name="keywords"
+      content="serviços, profissionais, manutenção, Severino App, reparos, limpeza, contratação, app de serviços"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="src/output.css" />
     <meta
@@ -13,5 +39,15 @@
   <body>
     <div id="root"></div>
     <script type="module" src="src/main.tsx"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Severino App",
+        "url": "https://severino.app.br",
+        "logo": "https://severino.app.br/favicon.svg",
+        "description": "Contrate profissionais de serviço de forma rápida, fácil e segura."
+      }
+    </script>
   </body>
 </html>
